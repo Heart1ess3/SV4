@@ -1,26 +1,23 @@
 import React from "react";
+import { TextField } from "@mui/material";
 
 function InputField({ label, type, name, value, onChange }) {
-  const style = {
-    padding: "10px",
-    marginTop: "5px",
-    marginBottom: "10px",
-    width: "100%",
-    border: "1px solid #ccc",
-    borderRadius: "5px",
-  }
-
   return (
-    <label>
-      {label}:
-      <input
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        style={style}
-      />
-    </label>
+    <TextField
+      label={label}
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      variant="outlined"
+      fullWidth
+      margin="normal"
+      InputProps={{
+        sx: {
+          borderRadius: "5px",
+        },
+      }}
+    />
   );
 }
 

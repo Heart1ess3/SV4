@@ -1,6 +1,7 @@
 import React from "react";
+import { Box, Typography } from "@mui/material";
 
-function ProfileDetails({profile}) {
+function ProfileDetails({ profile }) {
   const styles = {
     container: {
       padding: '20px',
@@ -15,29 +16,39 @@ function ProfileDetails({profile}) {
       display: 'grid',
       gap: '10px',
       textAlign: 'left',
-    }, 
+    },
     title: {
       textAlign: 'center',
       color: '#007bff',
-    }
+    },
   };
 
+  const profileFields = [
+    { label: 'First Name', value: profile.firstName },
+    { label: 'Last Name', value: profile.lastName },
+    { label: 'Nickname', value: profile.nickname },
+    { label: 'Description', value: profile.description },
+    { label: 'City', value: profile.city },
+    { label: 'Age', value: profile.age },
+    { label: 'Favourite meal', value: profile.meal },
+    { label: 'Occupation', value: profile.occupation },
+    { label: 'Hobbies', value: profile.hobbies },
+    { label: 'Relationship Status', value: profile.relationshipStatus },
+  ];
+
   return (
-    <div  style={styles.container}>
-      <h1 style={styles.title}>Profile Page</h1>
-      <div style={styles.profileInfo}>
-        <p><strong>First Name:</strong> {profile.firstName}</p>
-        <p><strong>Last Name:</strong> {profile.lastName}</p>
-        <p><strong>Nickname:</strong> {profile.nickname}</p>
-        <p><strong>Description:</strong> {profile.description}</p>
-        <p><strong>City:</strong> {profile.city}</p>
-        <p><strong>Age:</strong> {profile.age}</p>
-        <p><strong>Favourite meal:</strong> {profile.meal}</p>
-        <p><strong>Occupation:</strong> {profile.occupation}</p>
-        <p><strong>Hobbies:</strong> {profile.hobbies}</p>
-        <p><strong>Relationship Status:</strong> {profile.relationshipStatus}</p>
-      </div>
-  </div>
+    <Box sx={styles.container}>
+      <Typography variant="h1" sx={{ fontSize: '32px', ...styles.title }}>
+        Profile Page
+      </Typography>
+      <Box sx={styles.profileInfo}>
+        {profileFields.map(({ label, value }) => (
+          <Typography key={label}>
+            <strong>{label}:</strong> {value}
+          </Typography>
+        ))}
+      </Box>
+    </Box>
   );
 }
 

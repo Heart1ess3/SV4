@@ -1,10 +1,9 @@
 import React from "react";
-import Button from "./button";
 import ProfileDetails from "./profileDetails";
+import { Button, Box } from "@mui/material";
 
-function ProfileView({profile, onClick}) {
+function ProfileView({ profile, onClick }) {
   const containerStyle = {
-    textAlign: "left",
     marginBottom: "20px",
     padding: "20px",
     borderRadius: "10px",
@@ -15,12 +14,20 @@ function ProfileView({profile, onClick}) {
     fontFamily: "Arial, sans-serif",
   };
 
+  const buttonStyle = {
+    marginTop: "20px",
+    width: "100%",
+    textTransform: "none",
+  };
+
   return (
-    <div style={containerStyle}>
-      <ProfileDetails profile={profile}></ProfileDetails>
-      <Button text={'Edit Profile'} onClick={onClick}></Button>
-    </div>
-  )
+    <Box sx={containerStyle}>
+      <ProfileDetails profile={profile} />
+      <Button variant="contained" style={buttonStyle} onClick={onClick}>
+        EDIT
+      </Button>
+    </Box>
+  );
 }
 
 export default ProfileView;

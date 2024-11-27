@@ -1,82 +1,72 @@
+import React from "react";
+import { Box, Typography, Container, Paper, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemText, Chip } from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 const AboutPage = () => {
   return (
-    <div style={pageStyle}>
-      <main style={mainStyle}>
-        <section style={sectionStyle}>
-          <h2 style={headingStyle}>About Our Store</h2>
-          <div style={contentStyle}>
-            <p>
-              Welcome to <strong>Our Store</strong>, where quality meets affordability! Founded in 2010, we have 
-              grown to be a trusted name in the retail industry, offering a diverse range of products, from stylish 
-              clothing to cutting-edge electronics. Our mission is to provide you with an enjoyable shopping experience 
-              that keeps you coming back for more.
-            </p>
-          </div>
-        </section>
+    <Box sx={pageStyle}>
+      <Container component="main" sx={mainStyle}>
+        <Paper elevation={3} sx={sectionStyle}>
+          <Typography variant="h2" sx={{ ...headingStyle, fontSize: '24px' }}>
+            About Our Store
+          </Typography>
+          <Typography>
+            Welcome to <strong>Our Store</strong>, where quality meets affordability! Founded in 2010, we have 
+            grown to be a trusted name in the retail industry, offering a diverse range of products, from stylish 
+            clothing to cutting-edge electronics. Our mission is to provide you with an enjoyable shopping experience 
+            that keeps you coming back for more.
+          </Typography>
+        </Paper>
 
-        <section style={sectionStyle}>
-          <h2 style={headingStyle}>Our Mission</h2>
-          <div style={contentStyle}>
-            <p>
-              Our mission is simple: to bring you the best products at the best prices, coupled with 
-              exceptional customer service. We continuously strive to enhance our offerings, ensuring that you find 
-              exactly what you're looking for every time you visit us.
-            </p>
-          </div>
-        </section>
+        <Paper elevation={3} sx={sectionStyle}>
+          <Typography variant="h2" sx={{ ...headingStyle, fontSize: '24px' }}>
+            Our Mission
+          </Typography>
+          <Typography>
+            Our mission is simple: to bring you the best products at the best prices, coupled with 
+            exceptional customer service. We continuously strive to enhance our offerings, ensuring that you find 
+            exactly what you're looking for every time you visit us.
+          </Typography>
+        </Paper>
 
-        <section style={sectionStyle}>
-          <h2 style={headingStyle}>Meet Our Team</h2>
-          <div style={contentStyle}>
-            <p>
-            Our dedicated team is at the heart of everything we do. From customer service to product selection, each member plays a vital role in ensuring that you have a fantastic experience.
-              <strong> We’re here to help!</strong>
-            </p>
-          </div>
-        </section>
+        <Paper elevation={3} sx={sectionStyle}>
+          <Typography variant="h2" sx={{ ...headingStyle, fontSize: '24px' }}>
+            Meet Our Team
+          </Typography>
+          <List>
+            {teamMembers.map(member => (
+              <ListItem key={member.name}>
+                <ListItemText
+                  primary={member.name}
+                  secondary={member.role}
+                />
+                <Chip label={member.expertise} color="primary" />
+              </ListItem>
+            ))}
+          </List>
+        </Paper>
 
-        <section style={sectionStyle}>
-    <h2 style={headingStyle}>What Our Customers Say</h2>    
-    <blockquote style={blockquoteStyle}>
-        "Shopping at Our Store has been a fantastic experience! The variety of products is incredible, and I always find what I need."
-        <cite>— Sarah J.</cite>
-    </blockquote>          
-    <blockquote style={blockquoteStyle}>
-        "I ordered a laptop from here, and it arrived in perfect condition. Excellent service and fast shipping!"
-        <cite>— John D.</cite>
-    </blockquote>          
-    <blockquote style={blockquoteStyle}>
-        "The customer support team is amazing! They helped me with my order, and I couldn't be happier with my purchase."
-        <cite>— Emily R.</cite>
-    </blockquote>
-    <blockquote style={blockquoteStyle}>
-        "Our Store always has the best deals! I've saved so much money shopping here, and the quality is top-notch."
-        <cite>— Michael T.</cite>
-    </blockquote>
-    <blockquote style={blockquoteStyle}>
-        "I love the selection of clothing! Every time I visit, I leave with something stylish and affordable."
-        <cite>— Jessica L.</cite>
-    </blockquote>
-    <blockquote style={blockquoteStyle}>
-        "The organic products are fantastic! I can trust that I'm buying healthy options for my family."
-        <cite>— Anna K.</cite>
-    </blockquote>
-    <blockquote style={blockquoteStyle}>
-        "I appreciate the sustainability focus of this store. It makes shopping feel good!"
-        <cite>— Tom R.</cite>
-    </blockquote>
-    <blockquote style={blockquoteStyle}>
-        "Quick delivery and great customer service. I will definitely be a repeat customer!"
-        <cite>— Lisa M.</cite>
-    </blockquote>
-    <blockquote style={blockquoteStyle}>
-        "The store's layout is so easy to navigate. I can find what I need without hassle."
-        <cite>— Mark S.</cite>
-    </blockquote>
-</section>
-
-      </main>
-    </div>
+        <Paper elevation={3} sx={sectionStyle}>
+          <Typography variant="h2" sx={{ ...headingStyle, fontSize: '24px' }}>
+            Customer Feedback
+          </Typography>
+          <Accordion>
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography>What Our Customers Say</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <List>
+                {customerFeedback.map((feedback, index) => (
+                  <ListItem key={index}>
+                    <Typography>"{feedback.comment}" - <strong>{feedback.name}</strong></Typography>
+                  </ListItem>
+                ))}
+              </List>
+            </AccordionDetails>
+          </Accordion>
+        </Paper>
+      </Container>
+    </Box>
   );
 };
 
@@ -85,23 +75,22 @@ export default AboutPage;
 const pageStyle = {
   display: "flex",
   flexDirection: "column",
-  maxHeight: "100vh",
+  minHeight: "100vh",
   fontFamily: "Arial, sans-serif",
   backgroundColor: "#f0f4f8",
-  minWidth: "100vh",
 };
 
 const mainStyle = {
   flex: 1,
-  padding: "20px",
+  py: 3,
 };
 
 const sectionStyle = {
-  margin: "20px 0",
-  padding: "20px",
+  marginBottom: 2,
+  padding: 2,
   backgroundColor: "#ffffff",
   borderRadius: "10px",
-  boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
+  boxShadow: 3,
 };
 
 const headingStyle = {
@@ -111,16 +100,15 @@ const headingStyle = {
   marginBottom: "15px",
 };
 
-const contentStyle = {
-  display: "flex",
-  alignItems: "center",
-  gap: "20px",
-};
+const teamMembers = [
+  { name: "Alice Johnson", role: "Customer Service Manager", expertise: "Customer Support" },
+  { name: "Mark Smith", role: "Product Selection Specialist", expertise: "Product Knowledge" },
+  { name: "Lisa Ray", role: "Marketing Coordinator", expertise: "Marketing Strategies" },
+];
 
-const blockquoteStyle = {
-  fontStyle: "italic",
-  borderLeft: "4px solid #007bff",
-  paddingLeft: "10px",
-  margin: "10px 0",
-  color: "#555",
-};
+const customerFeedback = [
+  { comment: "Shopping at Our Store has been a fantastic experience! The variety of products is incredible.", name: "Sarah J." },
+  { comment: "Great prices and friendly staff! I highly recommend it to everyone.", name: "John D." },
+  { comment: "I love the selection of electronics and the quick delivery options!", name: "Emily W." },
+];
+

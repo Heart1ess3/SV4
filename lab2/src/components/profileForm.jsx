@@ -1,83 +1,36 @@
 import React from "react";
-import Button from "./button";
-import InputField from "./inputField"
+import { Button, Box, Typography, FormControl, InputLabel, OutlinedInput } from "@mui/material";
 
 function ProfileForm({ profile, handleChange, handleSubmit }) {
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-      <InputField
-        label="First Name"
-        name="firstName"
-        type="text"
-        value={profile.firstName}
-        onChange={handleChange}
-      />
-      <InputField
-        label="Last Name"
-        name="lastName"
-        type="text"
-        value={profile.lastName}
-        onChange={handleChange}
-      />
-      <InputField
-        label="Description"
-        name="description"
-        type="text"
-        value={profile.description}
-        onChange={handleChange}
-      />
-      <InputField
-        label="Nickname"
-        name="nickname"
-        type="text"
-        value={profile.nickname}
-        onChange={handleChange}
-      />
-      <InputField
-        label="City"
-        name="city"
-        type="text"
-        value={profile.city}
-        onChange={handleChange}
-      />
-      <InputField
-        label="Age"
-        name="age"
-        type="number"
-        value={profile.age}
-        onChange={handleChange}
-      />
-      <InputField
-        label="Favourite meal"
-        name="meal"
-        type="text"
-        value={profile.meal}
-        onChange={handleChange}
-      />
-      <InputField
-        label="Occupation"
-        name="occupation"
-        type="text"
-        value={profile.occupation}
-        onChange={handleChange}
-      />
-      <InputField
-        label="Hobbies"
-        name="hobbies"
-        type="text"
-        value={profile.hobbies}
-        onChange={handleChange}
-      />
-      <InputField
-        label="Relationship Status"
-        name="relationshipStatus"
-        type="text"
-        value={profile.relationshipStatus}
-        onChange={handleChange}
-      />
-      <Button text={"Save Changes"} type={"submit"}></Button>
-    </form>
-  )
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{ display: "flex", flexDirection: "column", gap: "10px", padding: "20px", borderRadius: "10px", boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)" }}
+    >
+      <Typography variant="h4" component="h2" sx={{ marginBottom: "20px", color: "#007bff" }}>
+        Profile Form
+      </Typography>
+
+      {Object.keys(profile).map((key) => (
+        <FormControl key={key} variant="outlined" fullWidth>
+          <InputLabel htmlFor={key}>{key.charAt(0).toUpperCase() + key.slice(1)}</InputLabel>
+          <OutlinedInput
+            id={key}
+            name={key}
+            type={key === "age" ? "number" : "text"}
+            value={profile[key]}
+            onChange={handleChange}
+            inputProps={key === "age" ? { min: 0 } : {}}
+          />
+        </FormControl>
+      ))}
+
+      <Button variant="contained" type="submit">
+        Save Changes
+      </Button>
+    </Box>
+  );
 }
 
 export default ProfileForm;

@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Item 1",
-    "description": "Description for Item 1",
-    "fullDescription": "This is full description for item 1"
+    "name": "Camera",
+    "description": "A classic film camera from the 80s.",
+    "fullDescription": "This vintage camera, produced in the early 1980s, captures stunning photos with its high-quality lens and retro charm. Perfect for photography enthusiasts who love the analog feel of film photography. With its durable metal body and manual controls, it gives you full creative control over each shot."
   },
   {
     "id": 2,
-    "name": "Item 2",
-    "description": "Description for Item 2",
-    "fullDescription": "THis is full description for item 2"
+    "name": "Bike",
+    "description": "A rugged bike designed for off-road adventures.",
+    "fullDescription": "This mountain bike features a sturdy frame, wide tires, and a smooth suspension system that can handle even the roughest trails. Whether you're a seasoned cyclist or just starting out, this bike offers an exhilarating ride on any terrain. The 21-speed gear system ensures smooth shifting, and the hydraulic disc brakes provide powerful stopping power."
   },
   {
     "id": 3,
-    "name": "Item 3",
-    "description": "Description for Item 3",
-    "fullDescription": "THis is full description for item 3"
+    "name": "Smartwatch",
+    "description": "A next-gen smartwatch with advanced features.",
+    "fullDescription": "The Smartwatch Pro is the ultimate companion for fitness enthusiasts and tech lovers. Featuring a sleek design, this smartwatch tracks your workouts, monitors your heart rate, and provides real-time GPS navigation. It also includes a built-in music player, message notifications, and a waterproof design, making it perfect for everyday use, from the office to the gym."
   }
 ]

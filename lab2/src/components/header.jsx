@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
 
 const Header = () => {
   return (
-    <header style={{ backgroundColor: "#007bff", color: "#fff", padding: "20px", textAlign: "center", borderBottom: "4px solid #0056b3" }}>
-      <h1>Welcome to Our Store</h1>
-      <p style={{ fontSize: "18px", marginTop: "10px", fontStyle: "italic" }}>Delivering quality products since 2017</p>
+    <Box 
+      component="header" 
+      sx={{ backgroundColor: "#007bff", color: "#fff", p: 2, textAlign: "center", borderBottom: "4px solid #0056b3" }}
+    >
+      <Typography variant="h1" sx={{ fontSize: "32px" }}>
+        Welcome to Our Store
+      </Typography>
+      <Typography sx={{ fontSize: "18px", mt: 1, fontStyle: "italic" }}>
+        Delivering quality products since 2010
+      </Typography>
       <nav style={{ marginTop: "15px" }}>
         <Link to="/about" style={linkStyles}>
           About
@@ -16,7 +24,7 @@ const Header = () => {
           Cards
         </Link>
       </nav>
-    </header>
+    </Box>
   );
 };
 
@@ -26,4 +34,4 @@ const linkStyles = {
   color: "#fff",
   margin: "0 15px",
   textDecoration: "none"
-}
+};

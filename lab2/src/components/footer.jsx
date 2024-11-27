@@ -1,19 +1,24 @@
-const Footer = () => {
-  const navLinkStyle = {
-    color: "#fff",
-    margin: "0 10px",
-    textDecoration: "none",
-    fontWeight: "bold",
-  };
+import React from "react";
+import { Box, Typography, Link } from "@mui/material";
 
+const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "#007bff", color: "#fff", padding: "20px", textAlign: "center", position: "relative", bottom: 0, width: "100%" }}>
-      <p>&copy; 2024 Our Store. All rights reserved.</p>
+    <Box 
+      component="footer" 
+      sx={{ backgroundColor: "#007bff", color: "#fff", p: 3, textAlign: "center", position: "relative", bottom: 0, width: "100%" }}
+    >
+      <Typography variant="body2" component="p" sx={{ mb: 2 }}>
+        &copy; 2024 Our Store. All rights reserved.
+      </Typography>
       <nav>
-        <a href="/privacy" style={navLinkStyle}>Privacy Policy</a>
-        <a href="/terms" style={navLinkStyle}>Terms of Service</a>
+        <Link href="/privacy" underline="none" sx={{ color: "#fff", mx: 2, fontWeight: "bold" }}>
+          Privacy Policy
+        </Link>
+        <Link href="/terms" underline="none" sx={{ color: "#fff", mx: 2, fontWeight: "bold" }}>
+          Terms of Service
+        </Link>
       </nav>
-    </footer>
+    </Box>
   );
 };
 
