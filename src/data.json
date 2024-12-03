@@ -1,0 +1,38 @@
+[
+{
+    "id": 1,
+    "image": "https://www.skiweekends.com/assets/uploads/image_library/vallee%20blanche.jpg",
+    "title": "La Vallee Blanche",
+    "description": "La Vallée Blanche is a renowned ski resort in the French Alps, offering breathtaking trails and picturesque views of Mont Blanc, along with unique opportunities for freeriding."
+},
+{
+    "id": 2,
+    "image": "https://cdn-s-www.ledauphine.com/images/AD355F2F-E977-4315-A83E-70E833EE97E1/SCH_04/ce-samedi-matin-a-l-aube-il-devrait-y-avoir-du-travail-pour-degager-la-ligne-de-course-et-assurer-la-bonne-tenue-du-geant-sur-une-piste-unique-photo-le-dl-thierry-guillot.jpg",
+    "title": "Face Bellevarde",
+    "description": "Face Bellevarde is a renowned ski slope in the French Alps, famous for its challenging runs and stunning mountain scenery."
+},
+{
+    "id": 3,
+    "image": "https://static.seetheworld.com/image_uploader/photos/ed/original/adh-150410-sr-sarenne-down-jpg.jpg",
+    "title": "La Sarenne",
+    "description": "La Sarenne is one of the longest black ski runs in the world, located in the Alpe d'Huez ski area in the French Alps. It offers a thrilling experience for advanced skiers, featuring breathtaking views and a diverse terrain that attracts winter sports enthusiasts."
+},
+{
+    "id": 4,
+    "image": "https://i.ytimg.com/vi/Hq_wxQiJxz0/maxresdefault.jpg",
+    "title": "Streif",
+    "description": "The Streif is a legendary downhill ski race course located in Kitzbühel, Austria. Known for its steep gradients, technical sections, and challenging jumps, it hosts the annual Hahnenkamm race, one of the most prestigious events in the ski racing calendar. The Streif is celebrated for its difficulty and the breathtaking scenery of the surrounding mountains."
+},
+{
+    "id": 5,
+    "image": "https://www.gazzettadellevalli.it/upload/2013/12/Madonna-Campiglio-2.jpg",
+    "title": "Canalone-Miramonti",
+    "description": "Canalone-Miramonti is a challenging ski run located in the Madonna di Campiglio ski area in Italy. Renowned for its steep slopes and technical sections, it attracts advanced skiers looking for an adrenaline rush. The run offers stunning views of the Dolomites and is famous for hosting competitive ski events, making it a popular destination for winter sports enthusiasts.'"
+},
+{
+    "id": 6,
+    "image": "https://s3-images.sportnews.bz/_images/fit/1000x563/img/2023/12/die-piste-in-alta-badia-ist-schon-jetzt-in-weiss-gehuellt.jpg",
+    "title": "Gran Risa",
+    "description": "Gran Risa is a famous ski slope located in the Alta Badia region of the Italian Dolomites. Renowned for its challenging terrain, it hosts the annual World Cup giant slalom races. The run features steep sections and technical turns, making it a favorite among advanced skiers, while offering breathtaking views of the surrounding mountains."
+}
+]
