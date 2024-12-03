@@ -1,0 +1,83 @@
+.actions {
+  text-align: center;
+  padding: 20px;
+}
+
+.button {
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+.button:hover::after {
+  width: 400%;
+  height: 400%;
+}
+
+.button:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-contained {
+  background: linear-gradient(45deg, #1976d2, #42a5f5);
+  color: white;
+  box-shadow: 0 6px 15px rgba(25, 118, 210, 0.3);
+}
+
+.button-contained:hover {
+  background: linear-gradient(45deg, #1565c0, #1e88e5);
+}
+
+.button-outlined {
+  border: 2px solid #1976d2;
+  color: #1976d2;
+  background-color: transparent;
+}
+
+.button-outlined:hover {
+  background-color: #1976d2;
+  color: white;
+}
+
+.button-secondary {
+  background: linear-gradient(45deg, #f50057, #ff4081);
+  color: white;
+  box-shadow: 0 6px 15px rgba(245, 0, 87, 0.3);
+}
+
+.button-secondary:hover {
+  background: linear-gradient(45deg, #d4004a, #ff1744);
+}
+
+.button:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.button:focus {
+  outline: 3px solid #1976d2;
+  outline-offset: 4px;
+}
